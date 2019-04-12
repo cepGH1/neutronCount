@@ -23,6 +23,7 @@ public class elementsGui extends javax.swing.JFrame {
         initComponents();
         myTable = new periodicTable();
         element = new Element();
+      //jTextField1.setVisible(false);
     }
     
     private void clearTextFields(){
@@ -49,6 +50,11 @@ public class elementsGui extends javax.swing.JFrame {
         jTextField11.setBackground(Color.GRAY);
        jTextField11.setText("      ");
     }
+    
+    private void elementAppearance(){
+        jTextField1.setVisible(true);
+    }
+        
     
     private void checkContent2(){
         String tester = jTextField2.getText();
@@ -195,7 +201,7 @@ public class elementsGui extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Select an Element");
-        jButton1.setToolTipText("");
+        jButton1.setToolTipText("Press to select a random element");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -280,7 +286,7 @@ public class elementsGui extends javax.swing.JFrame {
         });
 
         jTextField7.setEditable(false);
-        jTextField7.setText("feedback box");
+        jTextField7.setColumns(8);
         jTextField7.setToolTipText("");
 
         jTextField8.setColumns(8);
@@ -336,7 +342,6 @@ public class elementsGui extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -371,7 +376,7 @@ public class elementsGui extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(141, Short.MAX_VALUE))))
+                                .addContainerGap(147, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -420,13 +425,16 @@ public class elementsGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       elementR = myTable.displayElement();
+      elementAppearance();
+        elementR = myTable.displayElement();
       clearTextFields();
        element = new Element();
        element.atomicNumber = (myTable.randomAtomicNumber +1);
        element.massNumber = myTable.getMassNumber();
-       element.name = elementR;      
+       element.name = elementR;    
+      
        jTextField1.setText(elementR);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

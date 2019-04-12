@@ -60,7 +60,6 @@
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField7" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -106,7 +105,7 @@
                                   <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButton2" min="-2" pref="136" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="141" max="32767" attributes="0"/>
+                              <EmptySpace pref="147" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -169,7 +168,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Select an Element"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="toolTipText" type="java.lang.String" value="Press to select a random element"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -256,7 +255,7 @@
     <Component class="javax.swing.JTextField" name="jTextField7">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="text" type="java.lang.String" value="feedback box"/>
+        <Property name="columns" type="int" value="8"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>

@@ -25,7 +25,8 @@ public class periodicTable {
             "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon",
             "Francium", "Radium", "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium"};
     
-    private int[] massNumbers = {1,4,7,9,11,12,14,16,19,20,23,24,27,28,31,32,35,40,39,40,45,48,51,52,55,56,59,58,63,64,69,73,75,80,79,84};
+    private int[] massNumbers = {1,4,7,9,11,12,14,16,19,20,23,24,27,28,31,32,35,40,39,40,45,48,51,52,55,56,59,58,63,64,69,73,75,80,79,84,85,87,89,92,93,96,98,101,103,106,107,114,
+    115,120,121,130,127,132};
     public periodicTable(){
         
     }
@@ -35,7 +36,7 @@ public class periodicTable {
         double rando;
         rando = Math.random();
         System.out.println(rando);
-        randomAtomicNumber = (int)(rando*35);
+        randomAtomicNumber = (int)(rando*50);
         System.out.println(randomAtomicNumber);
         element = pTable[randomAtomicNumber];
         return element;
