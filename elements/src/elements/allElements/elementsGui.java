@@ -6,6 +6,11 @@
 package elements.allElements;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+
+
 
 /**
  *
@@ -15,6 +20,8 @@ public class elementsGui extends javax.swing.JFrame {
     String elementR;
     periodicTable myTable;
     Element element;
+   
+    
     int correctAnswers =0;
     /**
      * Creates new form elementsGui
@@ -23,6 +30,9 @@ public class elementsGui extends javax.swing.JFrame {
         initComponents();
         myTable = new periodicTable();
         element = new Element();
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+       Image image = toolkit.getImage("C:/Clare/Code/Java/elements/red1.jpg");
+        this.setIconImage(image);
       //jTextField1.setVisible(false);
     }
     
@@ -53,6 +63,12 @@ public class elementsGui extends javax.swing.JFrame {
     
     private void elementAppearance(){
         jTextField1.setVisible(true);
+    }
+    
+    private void showTableEntry(String selectedElement){
+        String filePath = "C:/Clare/Code/Java/elements/images/" + selectedElement + ".jpg";
+        System.out.println(filePath);
+        cep_canvas1.loadImage(new File(filePath));
     }
         
     
@@ -156,10 +172,11 @@ public class elementsGui extends javax.swing.JFrame {
         String a4 = jTextField10.getText();
         String a5 = jTextField11.getText();
         String tester = "Correct";
-      if( tester.equals(a5) ) {
+      if( tester.equals(a5) && tester.equals(a4) && tester.equals(a3) && tester.equals(a2) && tester.equals(a1) ) {
           correctAnswers ++;
           jTextField12.setText(Integer.toString(correctAnswers));
           clearTextFields();
+          showTableEntry("wellDone");
       } 
       
     }
@@ -194,11 +211,13 @@ public class elementsGui extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jTextField12 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        cep_canvas1 = new elements.allElements.cep_canvas();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Neutron Count");
 
         jButton1.setText("Select an Element");
         jButton1.setToolTipText("Press to select a random element");
@@ -315,6 +334,17 @@ public class elementsGui extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Number of Correct Answers");
 
+        javax.swing.GroupLayout cep_canvas1Layout = new javax.swing.GroupLayout(cep_canvas1);
+        cep_canvas1.setLayout(cep_canvas1Layout);
+        cep_canvas1Layout.setHorizontalGroup(
+            cep_canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        cep_canvas1Layout.setVerticalGroup(
+            cep_canvas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -364,7 +394,10 @@ public class elementsGui extends javax.swing.JFrame {
                                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
-                                .addGap(172, 172, 172)))
+                                .addGap(172, 172, 172))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cep_canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(141, 141, 141)))
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -385,10 +418,15 @@ public class elementsGui extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jButton1)
-                .addGap(26, 26, 26)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jButton1)
+                        .addGap(26, 26, 26)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(cep_canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -434,6 +472,7 @@ public class elementsGui extends javax.swing.JFrame {
        element.name = elementR;    
       
        jTextField1.setText(elementR);
+       showTableEntry(elementR);
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -526,6 +565,7 @@ public class elementsGui extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private elements.allElements.cep_canvas cep_canvas1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
