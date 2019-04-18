@@ -36,7 +36,7 @@ public class periodicTable {
         double rando;
         rando = Math.random();
         System.out.println(rando);
-        randomAtomicNumber = (int)(rando*11);
+        randomAtomicNumber = (int)(rando*18);
         System.out.println(randomAtomicNumber);
         element = pTable[randomAtomicNumber];
         return element;

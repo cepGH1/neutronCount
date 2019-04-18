@@ -63,7 +63,7 @@ public class cep_canvas extends JPanel  {
      */
     private void starterImage(){
          try{
-             File startFile = new File("C:/Clare/Code/Java/elements/images/Hydrogen.jpg");
+             File startFile = new File("C:/Clare/Code/Java/elements/images/whiteOne.jpg");
              picStart = new BufferedImage(100, 100, BufferedImage.TYPE_INT_RGB);
              picStart = ImageIO.read(startFile);
              pic2 = picStart;
